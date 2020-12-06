@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: rs-app
+service: rs-app-5
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -24,7 +24,7 @@ provider:
   name: aws
   runtime: nodejs12.x
   stage: dev
-  region: eu-west-1
+#  region: eu-west-1
 
 plugins:
   - serverless-finch
@@ -32,7 +32,7 @@ plugins:
 
 custom:
   client:
-    bucketName: aws-training-automatically-created # (see Configuration Parameters below)
+    bucketName: aws-training-auto-5 # (see Configuration Parameters below)
     distributionFolder: build
   ## Serverless-single-page-app-plugin configuration:
   s3BucketName: ${self:custom.client.bucketName}

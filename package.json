@@ -8,7 +8,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
 
-    "sls:deploy:s3": "serverless client deploy --region --no-config-change --no-policy-change --no-cors-change",
+    "sls:deploy:s3": "serverless client deploy --no-config-change --no-policy-change --no-cors-change",
     "build:deploy:s3": "npm run build & npm run sls:deploy:s3",
 
     "client:deploy": "sls client deploy --no-config-change --no-policy-change --no-cors-change",
