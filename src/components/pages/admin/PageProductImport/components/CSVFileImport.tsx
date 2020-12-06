@@ -37,13 +37,23 @@ export default function CSVFileImport({url, title}: CSVFileImportProps) {
         url,
         params: {
           name: encodeURIComponent(file.name)
-        }
+        },
+        headers: {
+          Authorization: `Basic ${localStorage.getItem('authorization_token')}`
+        },
+        // headers: {
+        //         //   'Access-Control-Allow-Origin': '*',
+        //         //   'Access-Control-Allow-Credentials': true,
+        //         // },
       })
       console.log('File to upload: ', file.name)
       console.log('Uploading to: ', response.data)
       const result = await fetch(response.data, {
+        headers: {
+          'Content-Type': 'text/csv',
+        },
         method: 'PUT',
-        body: file
+        body: file,
       })
       console.log('Result: ', result)
       setFile('');
